@@ -1,5 +1,7 @@
 import { Space_Grotesk, Inter } from "next/font/google";
 import { Metadata } from "next";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 import "./globals.css";
 
@@ -28,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
