@@ -19,13 +19,13 @@ export async function GET() {
     const sastDate = new Date(utc + sastOffset);
     const currentHour = sastDate.getHours();
 
-    // 2. Fetch Show + Image URL
-    // We added "imageUrl": thumbnail.asset->url to the query
+    // 2. Fetch Show + Image URL + timeSlot
     const query = `
       *[_type == "show" && timeSlot <= $hour] | order(timeSlot desc)[0] {
         title,
         streamUrl,
-        "imageUrl": thumbnail.asset->url, 
+        timeSlot,
+        "imageUrl": coverImage.asset->url, 
         "hosts": hosts[]->{
           name,
           "imageUrl": image.asset->url

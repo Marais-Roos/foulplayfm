@@ -2,6 +2,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import { Metadata } from "next";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import ClientLayout from "./components/ClientLayout";
 
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <ClientLayout />
         <Footer />
       </body>
     </html>
