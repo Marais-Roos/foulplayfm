@@ -48,6 +48,12 @@ export default defineType({
       description: 'Context for the AI (e.g. "Conspiracy theories and aliens")',
       type: 'string',
     }),
+    defineField({
+      name: 'streamUrl',
+      title: 'Radio Stream URL',
+      type: 'url',
+      description: 'The direct Shoutcast/Icecast MP3 stream URL for this show.',
+    }),
   ],
   preview: {
     select: {
